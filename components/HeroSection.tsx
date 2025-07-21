@@ -6,18 +6,20 @@ const MatrixCanvas: React.FC = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) return; // Exit if canvas is not yet available
+
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) return; // Exit if context cannot be created
+
+    // Since canvas and ctx are guaranteed to exist from this point on,
+    // we can define all our logic here.
 
     let mouse = { x: -200, y: -200 };
     let particles: Particle[] = [];
     const spacing = 30;
-
-    const setupCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight * 0.9;
-    };
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight * 0.9;
 
     class Particle {
       x: number;
@@ -84,7 +86,8 @@ const MatrixCanvas: React.FC = () => {
 
     function init() {
         particles = [];
-        setupCanvas(); // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight * 0.9;
         const cols = Math.floor(canvas.width / spacing);
         const rows = Math.floor(canvas.height / spacing);
         const xOffset = (canvas.width - (cols * spacing)) / 2 + spacing/2;
@@ -97,13 +100,14 @@ const MatrixCanvas: React.FC = () => {
         }
     }
 
+    let animationFrameId: number;
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
       }
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     init();
@@ -121,21 +125,24 @@ const MatrixCanvas: React.FC = () => {
     };
 
     const handleResize = () => {
-        init(); // Re-initialize everything on resize
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight * 0.9;
+        init();
     };
 
-    // Use window for mousemove to track outside canvas, but canvas for mouseleave
     window.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseOut);
     window.addEventListener('resize', handleResize);
 
+    // Cleanup function to remove event listeners and stop animation
     return () => {
         window.removeEventListener('mousemove', handleMouseMove);
         canvas.removeEventListener('mouseleave', handleMouseOut);
         window.removeEventListener('resize', handleResize);
+        cancelAnimationFrame(animationFrameId);
     };
 
-  }, []);
+  }, []); // The empty dependency array ensures this effect runs only once.
 
   return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />;
 };
