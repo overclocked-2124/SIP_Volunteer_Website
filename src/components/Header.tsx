@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
-import RVCELogoUrl from '../../RVCE_LOGO/RVCE_Logo.png';
+import RVCELogoUrl from '/logos/RVCE_Logo.png';
 
 const RVCELogo: React.FC = () => (
     <img 

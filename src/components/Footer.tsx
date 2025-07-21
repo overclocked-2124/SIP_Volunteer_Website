@@ -1,6 +1,6 @@
 import React from 'react';
-import RVCELogoUrl from '../../RVCE_LOGO/RVCE_Logo.png';
-import CCLogoUrl from '../../RVCE_LOGO/CCLogo_BG_Removed.png';
+import RVCELogoUrl from '/logos/RVCE_Logo.png';
+import CCLogoUrl from '/logos/CCLogo_BG_Removed.png';
 
 const RVCELogo: React.FC = () => (
     <img 
