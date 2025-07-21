@@ -6,9 +6,13 @@ const MatrixCanvas: React.FC = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) return; // Exit if canvas is not yet available
+
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) return; // Exit if context cannot be created
+
+    // Since canvas and ctx are guaranteed to exist from this point on,
+    // we can define all our logic here.
 
     let mouse = { x: -200, y: -200 };
     let particles: Particle[] = [];
@@ -39,7 +43,7 @@ const MatrixCanvas: React.FC = () => {
       }
 
       draw() {
-        if(!ctx) return;
+        if (!ctx) return;
         ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -82,7 +86,10 @@ const MatrixCanvas: React.FC = () => {
     }
 
     function init() {
+        if (!canvas) return; // Add null check
         particles = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight * 0.9;
         const cols = Math.floor(canvas.width / spacing);
         const rows = Math.floor(canvas.height / spacing);
         const xOffset = (canvas.width - (cols * spacing)) / 2 + spacing/2;
@@ -95,14 +102,15 @@ const MatrixCanvas: React.FC = () => {
         }
     }
 
+    let animationFrameId: number;
     function animate() {
-      if(!ctx) return;
+      if (!canvas || !ctx) return; // Add null check for canvas and ctx
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
       }
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     }
 
     init();
@@ -125,22 +133,22 @@ const MatrixCanvas: React.FC = () => {
         init();
     };
 
-    // Use window for mousemove to track outside canvas, but canvas for mouseleave
     window.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseOut);
     window.addEventListener('resize', handleResize);
 
+    // Cleanup function to remove event listeners and stop animation
     return () => {
         window.removeEventListener('mousemove', handleMouseMove);
         canvas.removeEventListener('mouseleave', handleMouseOut);
         window.removeEventListener('resize', handleResize);
+        cancelAnimationFrame(animationFrameId);
     };
 
-  }, []);
+  }, []); // The empty dependency array ensures this effect runs only once.
 
   return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />;
 };
-
 
 const HeroSection: React.FC = () => {
   return (

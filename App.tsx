@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import AboutSipSection from './components/AboutSipSection';
-import WhyVolunteerSection from './components/WhyVolunteerSection';
-import CtaSection from './components/CtaSection';
-import Footer from './components/Footer';
+import Header from './src/components/Header';
+import HeroSection from './src/components/HeroSection';
+import AboutSipSection from './src/components/AboutSipSection';
+import WhyVolunteerSection from './src/components/WhyVolunteerSection';
+import CtaSection from './src/components/CtaSection';
+import Footer from './src/components/Footer';
 
 const App: React.FC = () => {
   return (

@@ -1,7 +1,8 @@
 import React, { useState, ChangeEvent } from 'react';
 import Button from './Button';
 
-const GOOGLE_APPS_SCRIPT_URL = import.meta.env.VITE_GOOGLE_APPS_SCRIPT_URL;
+// TODO: Replace this placeholder with your own Google Apps Script Web App URL.
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMkriKiYyi7fp6Bep1xd6_uRvh9mYq2dBatqQMYLh-Q77AnQGmzvf23It30yvyFotzrw/exec';
 
 const departments = [
     { value: "AS", label: "Aerospace Engineering" },
@@ -62,26 +63,27 @@ interface FormSelectProps {
 }
 
 const FormSelect: React.FC<FormSelectProps> = ({ id, name, label, value, onChange, required = true, children }) => (
-     <div>
+    <div>
         <label htmlFor={id} className="block text-sm font-semibold mb-2">{label}</label>
-        <select 
-            id={id} 
-            name={name} 
-            value={value} 
-            onChange={onChange} 
-            required={required} 
-            className="w-full p-3 bg-gray-100 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200 appearance-none"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")`,
-              backgroundPosition: 'right 0.5rem center',
-              backgroundSize: '1.5em 1.5em'
-            }}
-        >
-            {children}
-        </select>
+        <div className="relative">
+            <select 
+                id={id} 
+                name={name} 
+                value={value} 
+                onChange={onChange} 
+                required={required} 
+                className="w-full p-3 bg-gray-100 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary transition-shadow duration-200 appearance-none pr-10 cursor-pointer"
+            >
+                {children}
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                </svg>
+            </div>
+        </div>
     </div>
 );
-
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -112,7 +114,7 @@ const RegistrationForm = () => {
         if (!isFormValid || !availabilityConfirmed) return;
 
         if (!GOOGLE_APPS_SCRIPT_URL || !GOOGLE_APPS_SCRIPT_URL.startsWith('https://')) {
-            alert('The application is not configured correctly. Please contact the site administrator.');
+            alert('Please configure the Google Apps Script URL in components/CtaSection.tsx before submitting.');
             return;
         }
 

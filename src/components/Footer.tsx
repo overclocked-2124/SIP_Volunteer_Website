@@ -1,5 +1,23 @@
 import React from 'react';
 
+const RVCELogo: React.FC = () => (
+    <img 
+        src="/RVCE_LOGO/RVCE_Logo.png" 
+        alt="RVCE Logo" 
+        className="h-10 w-10 object-contain"
+        style={{ filter: 'brightness(0)' }}
+    />
+);
+
+const CCLogo: React.FC = () => (
+    <img 
+        src="/RVCE_LOGO/CCLogo_BG_Removed.png" 
+        alt="CC Logo" 
+        className="h-10 w-24 object-contain"
+        style={{ filter: 'brightness(0)' }}
+    />
+);
+
 const Footer: React.FC = () => {
   return (
       <footer className="bg-gray-100 border-t border-gray-200">
@@ -7,10 +25,10 @@ const Footer: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="flex items-center space-x-6">
                     <a href="#" className="opacity-70 hover:opacity-100 transition-opacity duration-300">
-                        <div className="h-10 w-10 bg-gray-300 rounded-full"/>
+                        <RVCELogo />
                     </a>
                      <a href="#" className="opacity-70 hover:opacity-100 transition-opacity duration-300">
-                        <div className="h-10 w-24 bg-gray-300 rounded-md"/>
+                        <CCLogo />
                     </a>
                 </div>
                 <div className="flex flex-col items-center sm:items-end gap-4">

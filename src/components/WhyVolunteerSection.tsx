@@ -11,34 +11,35 @@ const benefits = [
         title: "Develop Leadership Skills",
         description: "Take initiative, manage groups, and hone your communication skills in a supportive, real-world environment.",
         icon: <LeadershipIcon />,
-        className: 'bg-rose-500',
+        color: '#ef4444', // bg-rose-500
     },
     {
         id: 2,
         title: "Earn a Certificate",
         description: "Receive an official certificate of appreciation from the college, a valuable addition to your resume and portfolio.",
         icon: <CertificateIcon />,
-        className: 'bg-amber-500',
+        color: '#f59e0b', // bg-amber-500
     },
     {
         id: 3,
         title: "Expand Your Network",
         description: "Connect with faculty, fellow volunteers, and build a strong rapport with the incoming batch of students.",
         icon: <NetworkIcon />,
-        className: 'bg-teal-500',
+        color: '#14b8a6', // bg-teal-500
     },
     {
         id: 4,
         title: "Give Back to RVCE",
         description: "Play a key role in shaping a positive and welcoming culture for new students, continuing a campus tradition.",
         icon: <GiveBackIcon />,
-        className: 'bg-indigo-500',
+        color: '#6366f1', // bg-indigo-500
     },
 ];
 
 const BenefitCard = ({ benefit }: { benefit: typeof benefits[0] }) => (
     <div 
-        className={`group relative flex-shrink-0 w-10/12 sm:w-[320px] h-80 rounded-3xl p-6 flex flex-col justify-between overflow-hidden transition-all duration-500 ease-in-out hover:-translate-y-2 shadow-lg snap-center ${benefit.className}`}
+        className="group relative flex-shrink-0 w-10/12 sm:w-[320px] h-80 rounded-3xl p-6 flex flex-col justify-between overflow-hidden transition-all duration-500 ease-in-out hover:-translate-y-2 shadow-lg snap-center"
+        style={{ backgroundColor: benefit.color }}
     >
         <div className="absolute -bottom-10 -right-10 text-white/20 transition-transform duration-500 ease-in-out group-hover:scale-125 group-hover:-rotate-12">
             {React.cloneElement(benefit.icon, { className: 'w-44 h-44' })}
