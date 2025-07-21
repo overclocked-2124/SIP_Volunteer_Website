@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import Button from './Button';
 
@@ -14,9 +13,11 @@ const MatrixCanvas: React.FC = () => {
     let mouse = { x: -200, y: -200 };
     let particles: Particle[] = [];
     const spacing = 30;
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight * 0.9;
+
+    const setupCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight * 0.9;
+    };
 
     class Particle {
       x: number;
@@ -40,7 +41,6 @@ const MatrixCanvas: React.FC = () => {
       }
 
       draw() {
-        if(!ctx) return;
         ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -84,6 +84,7 @@ const MatrixCanvas: React.FC = () => {
 
     function init() {
         particles = [];
+        setupCanvas(); // Set canvas size
         const cols = Math.floor(canvas.width / spacing);
         const rows = Math.floor(canvas.height / spacing);
         const xOffset = (canvas.width - (cols * spacing)) / 2 + spacing/2;
@@ -97,7 +98,6 @@ const MatrixCanvas: React.FC = () => {
     }
 
     function animate() {
-      if(!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
@@ -121,9 +121,7 @@ const MatrixCanvas: React.FC = () => {
     };
 
     const handleResize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight * 0.9;
-        init();
+        init(); // Re-initialize everything on resize
     };
 
     // Use window for mousemove to track outside canvas, but canvas for mouseleave
