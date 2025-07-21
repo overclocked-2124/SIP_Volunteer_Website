@@ -1,8 +1,10 @@
 import React from 'react';
+import RVCELogoUrl from '../../RVCE_LOGO/RVCE_Logo.png';
+import CCLogoUrl from '../../RVCE_LOGO/CCLogo_BG_Removed.png';
 
 const RVCELogo: React.FC = () => (
     <img 
-        src="/RVCE_LOGO/RVCE_Logo.png" 
+        src={RVCELogoUrl} 
         alt="RVCE Logo" 
         className="h-10 w-10 object-contain"
         style={{ filter: 'brightness(0)' }}
@@ -11,7 +13,7 @@ const RVCELogo: React.FC = () => (
 
 const CCLogo: React.FC = () => (
     <img 
-        src="/RVCE_LOGO/CCLogo_BG_Removed.png" 
+        src={CCLogoUrl} 
         alt="CC Logo" 
         className="h-10 w-24 object-contain"
         style={{ filter: 'brightness(0)' }}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
+import RVCELogoUrl from '../../RVCE_LOGO/RVCE_Logo.png';
 
 const RVCELogo: React.FC = () => (
     <img 
-        src="/RVCE_LOGO/RVCE_Logo.png" 
+        src={RVCELogoUrl} 
         alt="RVCE Logo" 
         className="w-10 h-10 object-contain"
         style={{ filter: 'brightness(0)' }}
