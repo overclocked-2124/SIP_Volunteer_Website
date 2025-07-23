@@ -6,13 +6,13 @@ const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMkriKi
 
 const departments = [
     { value: "AS", label: "Aerospace Engineering" },
-    { value: "CI", label: "Artificial Intelligence & Machine Learning" },
     { value: "BT", label: "Biotechnology" },
     { value: "CH", label: "Chemical Engineering" },
     { value: "CV", label: "Civil Engineering" },
-    { value: "CD", label: "Computer Science & Design" },
     { value: "CS", label: "Computer Science & Engineering" },
-    { value: "CY", label: "Cyber Security" },
+    { value: "CI", label: "Computer Science & Engineering - Artificial Intelligence & Machine Learning" },
+    { value: "CY", label: "Computer Science & Engineering - Cyber Security" },
+    { value: "CD", label: "Computer Science & Engineering - Data Science" },
     { value: "EE", label: "Electrical & Electronics Engineering" },
     { value: "EC", label: "Electronics & Communication Engineering" },
     { value: "ET", label: "Electronics & Telecommunication Engineering" },
