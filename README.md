@@ -1,6 +1,6 @@
 # RVCE SIP Volunteer Hub
 
-This is a modern web application for RVCE students to register as volunteers for the junior Student Induction Programme (SIP). It is built with React, TypeScript, and Vite, and styled with Tailwind CSS.
+This is a modern web application for RVCE students to register as volunteers for the junior Student Induction Programme (SIP). It is built with React, TypeScript, and Vite..
 
 ## Prerequisites
 
