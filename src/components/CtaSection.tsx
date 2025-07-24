@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import Button from './Button';
 
 // TODO: Replace this placeholder with your own Google Apps Script Web App URL.
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxMkriKiYyi7fp6Bep1xd6_uRvh9mYq2dBatqQMYLh-Q77AnQGmzvf23It30yvyFotzrw/exec';
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyGbxMWgws5_EsnbS7wku-YYfj7-VZpZ6umZpTLoU7jpMarJICGTbfFTQ-_KwpY3f0/exec';
 
 const departments = [
     { value: "AS", label: "Aerospace Engineering" },
@@ -89,10 +89,12 @@ const RegistrationForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         semester: '',
+        USN: '',
         phone: '',
         email: '',
         gender: '',
         department: '',
+
     });
     const [availabilityConfirmed, setAvailabilityConfirmed] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -107,7 +109,7 @@ const RegistrationForm = () => {
         setFormData(prev => ({...prev, [name]: value}));
     };
 
-    const isFormValid = formData.name && formData.semester && formData.phone && formData.email && formData.gender && formData.department;
+    const isFormValid = formData.name && formData.semester && formData.USN && formData.phone && formData.email && formData.gender && formData.department;
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -189,6 +191,11 @@ const RegistrationForm = () => {
                         <FormInput id="name" name="name" label="Full Name" value={formData.name} onChange={handleChange} placeholder="John Doe" />
                         <FormInput id="semester" name="semester" label="Semester" type="number" min="1" max="8" value={formData.semester} onChange={handleChange} placeholder="e.g., 3" />
                     </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormInput id="USN" name="USN" label="USN" type="text" value={formData.USN} onChange={handleChange} placeholder="1RV24IS150" />
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormInput id="phone" name="phone" label="Phone Number" type="tel" value={formData.phone} onChange={handleChange} placeholder="9876543210" />
                         <FormInput id="email" name="email" label="Email ID" type="email" value={formData.email} onChange={handleChange} placeholder="john.doe@example.com" />
