@@ -16,6 +16,7 @@ const departments = [
     { value: "EE", label: "Electrical & Electronics Engineering" },
     { value: "EC", label: "Electronics & Communication Engineering" },
     { value: "ET", label: "Electronics & Telecommunication Engineering" },
+    { value: "EI", label: "Electronics and Instrumentation Engineering" },
     { value: "IM", label: "Industrial Engineering & Management" },
     { value: "ISE", label: "Information Science & Engineering" },
     { value: "ME", label: "Mechanical Engineering" },
