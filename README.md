@@ -52,7 +52,7 @@ Start the Vite development server:
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) (or whatever port is indicated in your terminal) to view the application in your browser. The page will reload automatically if you make edits.
+Open [localhost](http://localhost:5173) (or whatever port is indicated in your terminal) to view the application in your browser. The page will reload automatically if you make edits.
 
 ## Available Scripts
 
