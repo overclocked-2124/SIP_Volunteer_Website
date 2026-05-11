@@ -27,8 +27,8 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'What is SIP?', href: '#what-is-sip' },
-    { name: 'Why Volunteer?', href: '#why-volunteer' },
-    { name: 'Register', href: '#register' },
+    { name: 'Why Join?', href: '#why-volunteer' },
+    { name: 'Apply Now', href: '#register' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             <a href="#" className="flex items-center space-x-3" onClick={(e) => e.preventDefault()}>
               <RVCELogo />
-              <span className="font-bold text-sm md:text-base tracking-tight uppercase">SIP Volunteers</span>
+              <span className="font-bold text-sm md:text-base tracking-tight uppercase">SIP 2026 — Organising Committee</span>
             </a>
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
             </div>
             <div className="hidden md:flex items-center space-x-4">
               <Button onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })} variant="primary">
-                Register Now
+                Apply Now
               </Button>
             </div>
             <div className="md:hidden">
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200/80">
             <a href="#" className="flex items-center space-x-3" onClick={(e) => e.preventDefault()}>
               <RVCELogo />
-              <span className="font-bold text-sm tracking-tight uppercase">SIP Volunteers</span>
+              <span className="font-bold text-sm tracking-tight uppercase">SIP 2026 — Organising Committee</span>
             </a>
             <button onClick={() => setIsMenuOpen(false)} className="p-2 text-gray-700 hover:text-primary">
                 <CloseIcon/>
@@ -108,7 +108,7 @@ const Header: React.FC = () => {
               </a>
             ))}
              <Button size="large" onClick={() => handleNavClick(new MouseEvent('click') as any, '#register')} variant="primary">
-              Register Now
+              Apply Now
             </Button>
         </div>
       </div>

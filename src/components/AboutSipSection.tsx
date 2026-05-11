@@ -43,24 +43,24 @@ const AboutSipSection: React.FC = () => {
             What is the <span className="font-normal">Student Induction Programme?</span>
           </h2>
           <p className="mt-6 text-lg text-white/95 leading-8">
-            SIP is designed to welcome and orient junior students to college life through a series of engaging and supportive activities.
+            SIP brings together the incoming batch and the college community through tech-driven events, team building activities, and club showcases — all organised by a student-led committee.
           </p>
         </div>
         <div className="grid lg:grid-cols-3 gap-8">
-          <FeatureCard 
+          <FeatureCard
             icon={<TeamBuildingIcon />}
-            title="Team Building"
-            description="Facilitate engaging activities that help juniors connect, collaborate, and form lasting friendships from day one."
+            title="Tech & Development"
+            description="Build the websites, attendance systems, ticketing tools, and interactive platforms that power SIP from the ground up."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<MentorshipIcon />}
-            title="Guidance & Mentorship"
-            description="Be a friendly face and a reliable guide. Share your experiences, answer questions, and help new students navigate college life."
+            title="Event & Volunteer Coordination"
+            description="Plan logistics, manage 80+ volunteers, and ensure every activity runs smoothly across all three days."
           />
-          <FeatureCard 
+          <FeatureCard
             icon={<EventsIcon />}
-            title="Fun & Creative Events"
-            description="Help organize and run a variety of fun-filled events, from ice-breakers to creative challenges, ensuring a vibrant start for everyone."
+            title="Design & Communication"
+            description="Create the posters, brochures, banners, and visual assets that give SIP its identity and reach."
           />
         </div>
       </div>

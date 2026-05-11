@@ -158,14 +158,14 @@ const HeroSection: React.FC = () => {
       <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-slate-800">
           Shape the Future.
-          <span className="block mt-2 md:mt-4 text-primary">Guide the Next Wave.</span>
+          <span className="block mt-2 md:mt-4 text-primary">BUILD THE NEXT SIP.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-base md:text-lg text-slate-600">
-          Become a vital part of the Student Induction Programme (SIP). Volunteer to mentor your juniors, lead exciting team-building activities, and make their first college experience unforgettable.
+          Be part of the team that organises the Student Induction Programme 2026. Lead events, build tech, design experiences, and make the 2026–2030 batch feel at home at RVCE.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Button size="large" onClick={() => document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })}>
-            Register Now
+            Apply Now
           </Button>
           <Button size="large" variant="secondary" onClick={() => {
             document.getElementById('what-is-sip')?.scrollIntoView({ behavior: 'smooth' });

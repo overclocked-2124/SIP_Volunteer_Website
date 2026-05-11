@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "PowerShell(& \"$env:ProgramFiles\\\\nodejs\\\\npm\" install)",
+      "PowerShell(& \"$env:ProgramFiles\\\\nodejs\\\\npm\" run dev)",
+      "Bash(npm run *)",
+      "PowerShell(Get-Item \"$env:ProgramFiles\\\\nodejs\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-ChildItem \"$env:ProgramFiles\\\\nodejs\" -Filter \"node.exe\")",
+      "PowerShell(& \"$env:ProgramFiles\\\\nodejs\\\\node.exe\" \"$env:ProgramFiles\\\\nodejs\\\\npm\" run dev)",
+      "PowerShell(cd \"c:\\\\Users\\\\sumuk\\\\Desktop\\\\Repository\\\\SIP_Volunteer_Website\"; & \"$env:ProgramFiles\\\\nodejs\\\\npm\" run dev)",
+      "PowerShell(& \"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" i)"
+    ]
+  }
+}

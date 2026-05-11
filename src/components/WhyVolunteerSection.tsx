@@ -8,31 +8,31 @@ const GiveBackIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-
 const benefits = [
     {
         id: 1,
-        title: "Develop Leadership Skills",
-        description: "Take initiative, manage groups, and hone your communication skills in a supportive, real-world environment.",
+        title: "Own Real Responsibility",
+        description: "Take charge of a domain — tech, events, or design — and deliver something the entire batch experiences.",
         icon: <LeadershipIcon />,
-        color: '#ef4444', // bg-rose-500
+        color: '#ef4444',
     },
     {
         id: 2,
-        title: "Earn a Certificate",
-        description: "Receive an official certificate of appreciation from the college, a valuable addition to your resume and portfolio.",
+        title: "Grow as a Leader",
+        description: "Step into a real organisational role — manage people, solve problems under pressure, and walk away with experience that no classroom can replicate.",
         icon: <CertificateIcon />,
-        color: '#f59e0b', // bg-amber-500
+        color: '#f59e0b',
     },
     {
         id: 3,
-        title: "Expand Your Network",
-        description: "Connect with faculty, fellow volunteers, and build a strong rapport with the incoming batch of students.",
+        title: "Build Lasting Connections",
+        description: "Work closely with faculty, the Coding Club, and your co-organisers — relationships that go beyond SIP.",
         icon: <NetworkIcon />,
-        color: '#14b8a6', // bg-teal-500
+        color: '#14b8a6',
     },
     {
         id: 4,
-        title: "Give Back to RVCE",
-        description: "Play a key role in shaping a positive and welcoming culture for new students, continuing a campus tradition.",
+        title: "Leave a Legacy",
+        description: "The systems and experiences you build will set the benchmark for every SIP that comes after yours.",
         icon: <GiveBackIcon />,
-        color: '#6366f1', // bg-indigo-500
+        color: '#6366f1',
     },
 ];
 
@@ -65,10 +65,10 @@ const WhyVolunteerSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Why Should You <span className="text-primary">Volunteer?</span>
+            Why Should You <span className="text-primary">Apply?</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 leading-8">
-            It's more than just helping out. It's an opportunity for personal and professional growth.
+            This isn't a volunteer role. You'll be an organiser — owning a piece of SIP 2026 from planning to execution.
           </p>
         </div>
       </div>

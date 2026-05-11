@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="flex flex-col items-center sm:items-end gap-4">
                     <div className="text-center sm:text-right">
-                        <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} RVCE Volunteer Initiative. All Rights Reserved.</p>
+                        <p className="text-sm text-gray-500">&copy; 2026 RVCE Student Induction Programme. All Rights Reserved.</p>
                         <p className="text-xs text-gray-500 mt-1">Designed by Students for Students.</p>
                     </div>
                 </div>
