@@ -122,6 +122,7 @@ const RegistrationForm = () => {
         branch: '',
         phone: '',
         email: '',
+        gender: '',
         sipMoment: '',
         sipIdea: '',
     });
@@ -149,6 +150,7 @@ const RegistrationForm = () => {
         formData.branch &&
         formData.phone &&
         formData.email &&
+        formData.gender &&
         formData.sipMoment &&
         formData.sipIdea &&
         contributions.length > 0 &&
@@ -267,6 +269,11 @@ const RegistrationForm = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormInput id="email" name="email" label="RVCE Email ID" type="email" value={formData.email} onChange={handleChange} placeholder="sumukhau.is24@rvce.edu.in" />
+                        <FormSelect id="gender" name="gender" label="Gender" value={formData.gender} onChange={handleChange}>
+                            <option value="" disabled>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </FormSelect>
                     </div>
 
                     <FormTextarea
@@ -341,7 +348,7 @@ const CtaSection = () => {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold">Ready to Make an Impact?</h2>
                     <p className="mt-4 opacity-90 text-lg leading-8">
-                        Applications are open to 3rd semester students. Fill out the form below and tell us how you'd like to contribute to SIP 2026.
+                        Applications are open to 2nd semester students. Fill out the form below and tell us how you'd like to contribute to SIP 2026.
                     </p>
                 </div>
 
