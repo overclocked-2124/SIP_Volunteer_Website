@@ -72,10 +72,10 @@ const WhyVolunteerSection: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="pl-6" style={{ '--container-px': '1.5rem' } as React.CSSProperties}>
-         <div className="flex items-stretch gap-6 py-8 overflow-x-auto no-scrollbar snap-x snap-mandatory" style={{paddingLeft: 'max(env(safe-area-inset-left), var(--container-px))', paddingRight: 'max(env(safe-area-inset-right), var(--container-px))'}}>
-            {benefits.map(benefit => <BenefitCard key={benefit.id} benefit={benefit} />)}
-         </div>
+      <div className="container mx-auto px-6">
+        <div className="flex flex-wrap justify-center gap-6 py-8">
+          {benefits.map(benefit => <BenefitCard key={benefit.id} benefit={benefit} />)}
+        </div>
       </div>
     </section>
   );
