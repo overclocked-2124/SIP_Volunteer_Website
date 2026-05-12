@@ -348,13 +348,21 @@ const CtaSection = () => {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold">Ready to Make an Impact?</h2>
                     <p className="mt-4 opacity-90 text-lg leading-8">
-                        Applications are open to 2nd semester students. Fill out the form below and tell us how you'd like to contribute to SIP 2026.
+                        Applications are open to 3rd semester students. Fill out the form below and tell us how you'd like to contribute to SIP 2026.
                     </p>
                 </div>
 
                 <div className="max-w-4xl mx-auto">
-                    <RegistrationForm />
+                    <div className="bg-white/95 backdrop-blur-sm text-base-text rounded-2xl p-8 sm:p-12 text-center shadow-2xl">
+                        <div className="text-5xl mb-6">🔒</div>
+                        <h3 className="text-2xl font-bold mb-3">Applications Closed</h3>
+                        <p className="text-gray-600 text-lg">Applications for the SIP 2026 Organising Committee are currently closed. Check back soon!</p>
+                    </div>
                 </div>
+
+                {/* <div className="max-w-4xl mx-auto">
+                    <RegistrationForm />
+                </div> */}
             </div>
         </section>
     );
