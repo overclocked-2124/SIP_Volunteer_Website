@@ -115,7 +115,7 @@ const FormTextarea: React.FC<FormTextareaProps> = ({ id, name, label, value, onC
     </div>
 );
 
-const RegistrationForm = () => {
+export const RegistrationForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         USN: '',
